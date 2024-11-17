@@ -5,10 +5,10 @@ TebLocalPlannerROS:
   teb_autosize: true
   dt_hysteresis: 0.1
   global_plan_overwrite_orientation: true
-  max_global_plan_lookahead_dist: 3.0
+  max_global_plan_lookahead_dist: 10.0
   feasibility_check_no_poses: 5
-  min_obstacle_dist: 0.4
-  inflation_dist: 0.5
+  min_obstacle_dist: 0.2
+  inflation_dist: 0.3
   costmap_converter_plugin: ""
   costmap_converter_spin_thread: true
   costmap_converter_rate: 5.0
@@ -21,25 +21,22 @@ TebLocalPlannerROS:
   weight_dynamic_obstacle: 10.0
   weight_dynamic_obstacle_inflation: 0.1
   weight_adapt_factor: 2.0
-  min_turning_radius: 0.5
+  min_turning_radius: 0.4
   max_vel_x: 0.5
   max_vel_x_backwards: 0.0
   max_vel_theta: 1.0
   acc_lim_x: 0.5
-  acc_lim_theta: 1.0
+  acc_lim_theta: 0.5
   cmd_angle_instead_rotvel: true
-  max_steering_angle: 0.6
+  max_steering_angle: 0.523598767
   wheelbase: 0.2
   footprint_model:
     type: "polygon"
-    vertices: [[-0.3, -0.2], [0.3, -0.2], [0.3, 0.2], [-0.3, 0.2]]
-  optimization_weights:
-    weight_kinematics_nh: 100.0  # 非全向性运动的权重
-    weight_obstacle: 20.0        # 避障优化权重
-    weight_inflation: 5.0        # 障碍膨胀区域优化权重
+    vertices: [[-0.2, -0.15], [0.2, -0.15], [0.2, 0.15], [-0.2, 0.15]]
+  weight_inflation: 2.0        # 障碍膨胀区域优化权重
   global_plan_viapoint_sep: 0.2
   global_plan_prune_distance: 0.5
   dt_ref: 0.1
-  dt_hysteresis: 0.02
+  dt_hysteresis: 0.05
   holonomic_robot: false
   include_costmap_obstacles: true
