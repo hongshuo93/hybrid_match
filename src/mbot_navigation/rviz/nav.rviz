@@ -7,6 +7,7 @@ Panels:
         - /Global Options1
         - /RobotModel1/Links1/base_footprint1
         - /Local Plan1
+        - /Polygon1
       Splitter Ratio: 0.6526610255241394
     Tree Height: 570
   - Class: rviz/Selection
@@ -336,6 +337,24 @@ Visualization Manager:
         {}
       Queue Size: 100
       Value: true
+    - Alpha: 1
+      Class: rviz/Polygon
+      Color: 25; 255; 0
+      Enabled: true
+      Name: Polygon
+      Queue Size: 10
+      Topic: /move_base/global_costmap/footprint
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Class: rviz/Polygon
+      Color: 25; 255; 0
+      Enabled: true
+      Name: Polygon
+      Queue Size: 10
+      Topic: ""
+      Unreliable: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 0; 0; 0
@@ -368,10 +387,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 145.44741821289062
+      Scale: 189.02127075195312
       Target Frame: <Fixed Frame>
-      X: 0.4127099812030792
-      Y: -2.021763324737549
+      X: 0.5671693086624146
+      Y: 0.9201177358627319
     Saved: ~
 Window Geometry:
   Displays:
@@ -389,5 +408,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1432
-  X: 2560
-  Y: 360
+  X: 3571
+  Y: 624
