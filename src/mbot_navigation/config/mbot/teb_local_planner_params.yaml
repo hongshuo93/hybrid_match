@@ -11,8 +11,8 @@ TebLocalPlannerROS:
   costmap_converter_plugin: ""
   costmap_converter_spin_thread: true
   costmap_converter_rate: 2.0
-  weight_kinematics_nh: 1000.0
-  weight_kinematics_forward_drive: 2.0
+  weight_kinematics_nh: 600.0
+  weight_kinematics_forward_drive: 1.0
   weight_kinematics_turning_radius: 1.0
   weight_optimaltime: 2.0
   weight_obstacle: 50.0
@@ -22,7 +22,7 @@ TebLocalPlannerROS:
   weight_adapt_factor: 2.0
   min_turning_radius: 0.35
   max_vel_x: 0.4
-  max_vel_x_backwards: 0.0
+  max_vel_x_backwards: 0.1
   max_vel_theta: 0.8
   acc_lim_x: 0.3
   acc_lim_theta: 0.4
