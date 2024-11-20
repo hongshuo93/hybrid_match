@@ -155,6 +155,9 @@ include_directories(
 add_executable(move_test src/move_test.cpp)
 target_link_libraries(move_test ${catkin_LIBRARIES})
 
+
+catkin_install_python(PROGRAMS scripts/NavTest.py
+                      DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 #############
 ## Install ##
 #############

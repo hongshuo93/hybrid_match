@@ -1,0 +1,43 @@
+# teb_local_planner_params.yaml
+
+TebLocalPlannerROS:
+  odom_topic: odom  # 里程计话题名称，用于获取机器人的位姿和速度信息。
+  map_frame: map  # 地图坐标系的帧名称。
+  teb_autosize: true  # 是否自动调整TEB的时间跨度和步长，建议为true以适应不同的速度和障碍环境。
+  global_plan_overwrite_orientation: true  # 是否使用全局路径的方向覆盖局部规划的方向，有助于机器人更好地跟随全局路径。
+  max_global_plan_lookahead_dist: 7.0  # 局部规划器在全局路径上向前看的最大距离（米），影响机器人对前方路径的感知范围。
+  feasibility_check_no_poses: 5  # 可行性检查中使用的姿态数量，增大可能提高路径的可靠性。
+  min_obstacle_dist: 0.2  # 机器人与障碍物的最小允许距离（米），增大以确保更安全的避障距离。
+  inflation_dist: 0.3  # 障碍物膨胀距离（米），增大可提高避障的保守性。
+  costmap_converter_plugin: ""  # 不使用costmap转换器插件，保持为空字符串。
+  costmap_converter_spin_thread: true  # 是否在单独的线程中运行costmap转换器，提高性能。
+  costmap_converter_rate: 5.0  # costmap转换器的更新频率（Hz），增大可提高障碍物信息的实时性。
+  weight_kinematics_nh: 1000.0  # 非全向运动学约束的权重，增大可严格遵守非全向运动学。
+  weight_kinematics_forward_drive: 10.0  # 前进运动约束的权重，增大可更强烈地偏好向前行驶。
+  weight_kinematics_turning_radius: 5.0  # 转弯半径约束的权重，增大可限制急转弯。
+  weight_optimaltime: 1.0  # 优化时间的权重，减小可增加路径的平滑度。
+  weight_obstacle: 50.0  # 障碍物代价的权重，保持默认以确保避障效果。
+  weight_viapoint: 1.0  # 经过点的权重，减小可平滑路径跟踪。
+  weight_dynamic_obstacle: 15.0  # 动态障碍物的权重，保持默认以处理动态环境。
+  weight_dynamic_obstacle_inflation: 0.1  # 动态障碍物膨胀的权重，保持默认。
+  weight_adapt_factor: 2.0  # 权重自适应因子，影响优化过程中权重的动态调整。
+  min_turning_radius: 0.4  # 机器人最小转弯半径（米），根据机器人实际能力设置。
+  max_vel_x: 1.0  # 机器人前进方向的最大速度（米/秒），增大可提高行驶速度。
+  max_vel_x_backwards: 0.2  # 机器人后退方向的最大速度（米/秒），适当增大以提高灵活性。
+  max_vel_theta: 0.5  # 机器人最大角速度（弧度/秒），增大可提高转向速度。
+  acc_lim_x: 0.5  # 机器人前进方向的最大加速度（米/秒²），增大可允许更快的加速和减速。
+  acc_lim_theta: 0.5  # 机器人最大角加速度（弧度/秒²），增大可允许更快的转向加速度。
+  cmd_angle_instead_rotvel: true  # 是否使用转向角度而非旋转速度控制，Ackermann结构机器人应设置为true。
+  max_steering_angle: 0.523598767  # 机器人最大转向角度（弧度），约为30度，根据实际情况调整。
+  wheelbase: 0.2  # 机器人轴距（米），请根据实际机器人尺寸设置。
+  footprint_model:
+    type: "polygon"  # 机器人外形模型的类型，使用多边形模型。
+    vertices: [[-0.2, -0.15], [0.2, -0.15], [0.2, 0.15], [-0.2, 0.15]]  # 机器人外形多边形的顶点坐标，影响碰撞检测。
+  weight_inflation: 2.5  # 障碍物膨胀区域的优化权重，影响机器人远离障碍物的程度。
+  global_plan_viapoint_sep: 0.5  # 全局路径中相邻经过点的最小间隔（米），增大可减少经过点数量，平滑路径跟踪。
+  global_plan_prune_distance: 1.0  # 修剪全局路径中已走过部分的距离阈值（米），增大可提高规划效率。
+  dt_ref: 0.3  # 参考时间步长（秒），减小可提高时间离散化的精度。
+  dt_hysteresis: 0.1  # 时间步长的滞后（秒），减小可更快地适应速度变化。
+  holonomic_robot: false  # 指定机器人是否为全向移动，Ackermann结构应设置为false。
+  include_costmap_obstacles: true  # 是否包含costmap中的障碍物，设置为true以进行避障。
+  prefer_forward_drive: true  # 是否优先向前行驶，设置为true以避免倒车。
