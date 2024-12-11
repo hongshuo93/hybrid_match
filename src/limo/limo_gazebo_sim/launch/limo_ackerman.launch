@@ -43,13 +43,7 @@
     <node name="controller_spawner" pkg="controller_manager" type="spawner" 
           respawn="false" output="screen" args="limo_state_controller  
                                 limo_fl_steering_hinge_controller limo_fr_steering_hinge_controller"/>
-    <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /> -->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
-    <param name="use_sim_time" value="$(arg use_sim_time)"/>
-  </node>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" output="screen">
-    <param name="use_sim_time" value="$(arg use_sim_time)"/>
-  </node>
-    <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find limo_description)/rviz/model_display.rviz" /> -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find limo_description)/rviz/model_display.rviz" />
 </launch>
